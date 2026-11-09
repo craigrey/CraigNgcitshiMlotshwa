@@ -3,219 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Systems Administrator and Application Support Specialist CV for Craig Ngcitshi Mlotshwa.">
+  <meta name="description" content="CV of Craig Ngcitshi Mlotshwa, Systems Administrator and Application Support Specialist.">
   <meta name="theme-color" content="#0b1220">
   <title>Craig Ngcitshi Mlotshwa | Systems Administrator</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b1220;
-      --surface: #111c2e;
-      --surface-raised: #152238;
-      --text: #eef4ff;
-      --muted: #a4b2c8;
-      --line: #273750;
-      --accent: #6ee7d2;
-      --max-width: 1080px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: radial-gradient(ellipse at 75% -10%, #18344a 0, transparent 38rem), var(--bg);
-      color: var(--text);
-      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    a { color: var(--accent); text-underline-offset: .22em; }
-    a:hover { color: white; }
-    .wrap { width: min(var(--max-width), calc(100% - 2.5rem)); margin-inline: auto; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-bottom: 1px solid rgb(164 178 200 / 15%); }
-    .brand { color: var(--text); font-weight: 750; letter-spacing: -.03em; text-decoration: none; }
-    .top-actions { display: flex; align-items: center; gap: 1.15rem; }
-    .top-actions a { color: var(--muted); font-size: .92rem; text-decoration: none; }
-    .top-actions a:hover { color: var(--accent); }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent); color: #06201d !important; font-weight: 750; text-decoration: none !important; cursor: pointer; }
-    .button:hover { background: #a3f4e7; border-color: #a3f4e7; }
-    .button.secondary { background: transparent; color: var(--text) !important; border-color: var(--line); }
-    .button.secondary:hover { border-color: var(--accent); color: var(--accent) !important; }
-    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 3rem; align-items: center; padding-block: clamp(4rem, 11vw, 8rem); }
-    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { max-width: 760px; margin: .55rem 0 1rem; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1.02; letter-spacing: -.065em; }
-    .hero h2 { margin: 0; color: #c1ccdc; font-size: clamp(1.25rem, 3vw, 1.8rem); font-weight: 550; letter-spacing: -.025em; }
-    .intro { max-width: 650px; margin: 1.4rem 0 0; color: var(--muted); font-size: 1.08rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
-    .monogram { display: grid; place-items: center; width: 220px; aspect-ratio: 1; justify-self: center; border: 1px solid #33516a; border-radius: 50%; background: linear-gradient(145deg, #173b4c, #111c2e 68%); box-shadow: 0 0 0 14px rgb(110 231 210 / 4%), 0 24px 80px rgb(0 0 0 / 25%); color: var(--accent); font-size: 4rem; font-weight: 800; letter-spacing: -.08em; }
-    .section { padding-block: 2rem 3.5rem; scroll-margin-top: 1.5rem; }
-    .section-heading { display: flex; align-items: baseline; gap: .85rem; margin-bottom: 1.35rem; }
-    .section-heading span { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; }
-    h2 { margin: 0; font-size: 1.55rem; letter-spacing: -.035em; }
-    .panel { padding: clamp(1.2rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 14px; background: rgb(17 28 46 / 82%); }
-    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.25rem; }
-    .about-grid p { margin: 0; color: var(--muted); }
-    .focus-list { display: grid; gap: .7rem; margin: 0; padding: 0; list-style: none; }
-    .focus-list li { display: flex; gap: .7rem; color: #d7e1ef; }
-    .focus-list li::before { content: "✳"; color: var(--accent); }
-    .entry { position: relative; padding: 0 0 0 1.25rem; border-left: 1px solid #38506b; }
-    .entry + .entry { margin-top: 1.7rem; }
-    .entry::before { position: absolute; top: .42rem; left: -.32rem; width: .58rem; height: .58rem; border-radius: 50%; background: var(--accent); content: ""; }
-    h3 { margin: 0; font-size: 1.08rem; }
-    .meta { margin: .2rem 0 .65rem; color: var(--muted); font-size: .92rem; }
-    .entry p:not(.meta) { margin: .4rem 0; color: #d0dbea; }
-    ul.bullets { margin: .55rem 0 0; padding-left: 1.2rem; color: #d0dbea; }
-    ul.bullets li + li { margin-top: .35rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .skill-group h3 { margin-bottom: .75rem; color: var(--accent); font-size: .95rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0; padding: 0; list-style: none; }
-    .tags li { padding: .32rem .7rem; border: 1px solid #31445e; border-radius: 999px; background: var(--surface-raised); color: #dce6f4; font-size: .9rem; }
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .project { display: flex; flex-direction: column; min-height: 200px; }
-    .project h3 a { color: var(--text); text-decoration: none; }
-    .project h3 a:hover { color: var(--accent); }
-    .project p { flex: 1; color: var(--muted); }
-    .project .tags { margin-top: .8rem; }
-    .contact-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
-    .contact-panel p { margin: .35rem 0 0; color: var(--muted); }
-    footer { padding-block: 1.5rem 2rem; border-top: 1px solid rgb(164 178 200 / 15%); color: var(--muted); font-size: .9rem; }
-    @media (max-width: 700px) {
-      .wrap { width: min(100% - 1.5rem, var(--max-width)); }
-      .topbar { align-items: flex-start; }
-      .top-actions { justify-content: flex-end; flex-wrap: wrap; gap: .55rem .85rem; }
-      .hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 4rem 3rem; }
-      .monogram { grid-row: 1; width: 130px; font-size: 2.5rem; justify-self: start; }
-      .hero-copy { grid-row: 2; }
-      .about-grid, .skills-grid, .project-grid { grid-template-columns: 1fr; }
-    }
-    @media print {
-      :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-raised: #f3f6f8; --text: #102a43; --muted: #46596d; --line: #ccd6e0; --accent: #087e8b; }
-      body { background: #fff; color: #102a43; font-size: 10.5pt; }
-      .wrap { width: 100%; }
-      .topbar, .hero-actions, footer { display: none; }
-      .hero { grid-template-columns: 1fr; padding-block: 1rem 1.5rem; }
-      .monogram { display: none; }
-      .panel { background: #fff; }
-      .section { padding-block: .8rem 1.2rem; }
-      a { color: inherit; text-decoration: none; }
-      .section, .panel, .entry, .project { break-inside: avoid; }
-    }
+    :root{color-scheme:dark;--bg:#0b1220;--surface:#111c2e;--text:#eef4ff;--muted:#a4b2c8;--line:#273750;--accent:#6ee7d2;--max:1000px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#18344a 0,transparent 38rem),var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-underline-offset:.2em}a:hover{color:white}.wrap{width:min(var(--max),calc(100% - 2.5rem));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.2rem 0;border-bottom:1px solid #ffffff20}.brand{color:var(--text);font-weight:750;text-decoration:none}.nav{display:flex;align-items:center;gap:1.2rem}.nav a{color:var(--muted);font-size:.92rem;text-decoration:none}.nav a:hover{color:var(--accent)}.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:#06201d;font-weight:750;text-decoration:none}.button.secondary{border-color:var(--line);background:transparent;color:var(--text)}.hero{display:grid;grid-template-columns:1fr 200px;gap:2rem;align-items:center;padding:clamp(3.5rem,9vw,7rem) 0}.eyebrow{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}h1{margin:.5rem 0;font-size:clamp(2.5rem,7vw,5rem);line-height:1.05;letter-spacing:-.06em}.role{margin:0;color:#c1ccdc;font-size:1.5rem}.intro{max-width:720px;color:var(--muted);font-size:1.08rem}.monogram{display:grid;place-items:center;width:180px;aspect-ratio:1;border:1px solid #33516a;border-radius:50%;background:#173344;color:var(--accent);font-size:3.5rem;font-weight:800}.section{padding:1.5rem 0 2.5rem;scroll-margin-top:1rem}.section-title{display:flex;align-items:baseline;gap:.8rem;margin:0 0 1.2rem;font-size:1.5rem;letter-spacing:-.03em}.section-title span{color:var(--accent);font: .9rem ui-monospace,monospace}.panel{padding:clamp(1.2rem,4vw,2rem);border:1px solid var(--line);border-radius:14px;background:rgb(17 28 46 / 85%)}.profile-grid,.skills-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}.profile-grid p{margin:0;color:var(--muted)}.focus{margin:0;padding:0;list-style:none}.focus li+li{margin-top:.45rem}.focus li:before{content:"✳ ";color:var(--accent)}.entry{border-left:1px solid #38506b;padding-left:1.2rem;position:relative}.entry:before{content:"";position:absolute;left:-.32rem;top:.42rem;width:.58rem;height:.58rem;border-radius:50%;background:var(--accent)}h3{margin:0;font-size:1.1rem}.meta{margin:.15rem 0 .7rem;color:var(--muted);font-size:.94rem}.bullets{margin:.5rem 0 0;padding-left:1.2rem;color:#d0dbea}.bullets li+li{margin-top:.5rem}.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill h3{margin-bottom:.75rem;color:var(--accent);font-size:.98rem}.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}.tags li{padding:.3rem .7rem;border:1px solid #31445e;border-radius:999px;background:#152238;color:#dce6f4;font-size:.9rem}.contact{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}.contact p{margin:.35rem 0 0;color:var(--muted)}footer{padding:1.5rem 0 2rem;border-top:1px solid #ffffff20;color:var(--muted);font-size:.9rem}
+    @media(max-width:700px){.wrap{width:calc(100% - 1.5rem)}.topbar{align-items:flex-start}.nav{justify-content:flex-end;flex-wrap:wrap;gap:.6rem .9rem}.hero{grid-template-columns:1fr;padding:3rem 0}.monogram{grid-row:1;width:115px;font-size:2.4rem}.hero-copy{grid-row:2}.profile-grid,.skills-grid{grid-template-columns:1fr}}
+    @media print{body{background:#fff;color:#102a43;font-size:10.5pt}.wrap{width:100%}.topbar,.monogram,.print-button,footer{display:none}.hero{display:block;padding:1rem 0}.panel{background:#fff}.section{padding:.7rem 0}a{color:inherit;text-decoration:none}.section,.panel,.entry{break-inside:avoid}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <nav class="topbar" aria-label="Main navigation">
       <a class="brand" href="#home">Craig Ngcitshi Mlotshwa</a>
-      <div class="top-actions">
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a class="button secondary" href="#contact">Get in touch</a>
-      </div>
+      <div class="nav"><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certification</a><a href="#contact">Contact</a></div>
     </nav>
-
     <header class="hero" id="home">
       <div class="hero-copy">
         <div class="eyebrow">Systems administration · application support</div>
         <h1>Craig Ngcitshi Mlotshwa</h1>
-        <h2>Systems Administrator</h2>
+        <p class="role">Systems Administrator</p>
         <p class="intro">Application Support Specialist with over 8 years of experience supporting mission-critical healthcare and enterprise systems in high-availability environments. Skilled in SQL Server and Oracle database administration, IIS application troubleshooting, incident management, and PowerShell automation. AWS certified, with a track record of restoring service quickly, cutting downtime incidents, and reducing average incident resolution time.</p>
-        <div class="hero-actions">
-          <a class="button" href="#experience">View experience <span aria-hidden="true">↘</span></a>
-          <button class="button secondary" type="button" onclick="window.print()">Print / save as PDF</button>
-        </div>
+        <a class="button print-button" href="#experience">View experience ↓</a>
+        <button class="button secondary print-button" type="button" onclick="window.print()">Print / save as PDF</button>
       </div>
       <div class="monogram" aria-hidden="true">CM</div>
     </header>
-
     <main>
-      <section class="section" aria-labelledby="about-title">
-        <div class="section-heading"><span>01</span><h2 id="about-title">Profile</h2></div>
-        <div class="about-grid">
-          <div class="panel">
-            <p>I support mission-critical applications and infrastructure in high-availability environments, focused on keeping services stable, responsive, and operational during incidents. My work combines technical troubleshooting, database support, automation, and strong incident response to reduce downtime and improve service reliability across healthcare and enterprise systems.</p>
-          </div>
-          <div class="panel">
-            <ul class="focus-list">
-              <li>Application and infrastructure support</li>
-              <li>Database administration and troubleshooting</li>
-              <li>Incident response and service restoration</li>
-              <li>Automation using PowerShell</li>
-            </ul>
-          </div>
+      <section class="section" aria-labelledby="profile-title">
+        <h2 class="section-title" id="profile-title"><span>01</span> Profile</h2>
+        <div class="profile-grid">
+          <div class="panel"><p>Experienced supporting mission-critical healthcare and enterprise systems in high-availability environments. Combines application and database troubleshooting with incident leadership and automation to restore services quickly and improve operational reliability.</p></div>
+          <div class="panel"><ul class="focus"><li>Application and infrastructure support</li><li>Database administration and troubleshooting</li><li>Incident response and service restoration</li><li>PowerShell monitoring and automation</li></ul></div>
         </div>
       </section>
-
       <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading"><span>02</span><h2 id="experience-title">Experience</h2></div>
-        <div class="panel">
-          <article class="entry">
-            <h3>Application Support Specialist</h3>
-            <p class="meta">Healthcare and enterprise systems · 8+ years</p>
-            <ul class="bullets">
-              <li>Supported mission-critical healthcare and enterprise applications in high-availability environments, ensuring continuity of service for key business operations.</li>
-              <li>Performed SQL Server and Oracle database administration tasks, including troubleshooting, performance monitoring, and issue resolution to maintain application health.</li>
-              <li>Diagnosed and resolved IIS and application-layer incidents, reducing service interruptions and restoring business-critical systems quickly.</li>
-              <li>Managed incident response workflows, tracked root causes, and used PowerShell automation to streamline repetitive tasks and reduce average incident resolution time.</li>
-              <li>Worked to minimize downtime incidents and improve system resilience through proactive monitoring and rapid restoration activities.</li>
-            </ul>
-          </article>
-          <article class="entry">
-            <h3>Systems Support and Operations</h3>
-            <p class="meta">Enterprise environments</p>
-            <ul class="bullets">
-              <li>Maintained stable service delivery across complex application stacks and supporting infrastructure.</li>
-              <li>Collaborated with stakeholders to prioritize issues, restore services, and communicate clear technical updates during high-pressure incidents.</li>
-            </ul>
-          </article>
-        </div>
+        <h2 class="section-title" id="experience-title"><span>02</span> Professional experience</h2>
+        <article class="panel entry">
+          <h3>Senior Technical Support Engineer</h3>
+          <p class="meta">Premier Service Medical Investments · Zimbabwe · 2021–2024</p>
+          <ul class="bullets">
+            <li>Resolved a critical member portal outage affecting 2,000+ concurrent users during month-end claims processing by identifying affected nodes and implementing emergency failover within 45 minutes.</li>
+            <li>Recovered a corrupted claims database containing six months of transaction data using point-in-time recovery, preventing delayed provider payments and avoiding regulatory penalties.</li>
+            <li>Designed automated monitoring with PowerShell scripts to detect database connection pool exhaustion early and help reduce system downtime incidents.</li>
+            <li>Led troubleshooting for a payment gateway integration, resolving SSL certificate issues and API timeouts that blocked member mobile-app transactions.</li>
+            <li>Mentored junior support staff in database troubleshooting and created playbooks that reduced average incident resolution time from four hours to 90 minutes.</li>
+          </ul>
+        </article>
       </section>
-
       <section class="section" id="skills" aria-labelledby="skills-title">
-        <div class="section-heading"><span>03</span><h2 id="skills-title">Technical skills</h2></div>
+        <h2 class="section-title" id="skills-title"><span>03</span> Technical skills</h2>
         <div class="skills-grid">
-          <div class="panel skill-group"><h3>Database & application support</h3><ul class="tags"><li>SQL Server</li><li>Oracle</li><li>IIS</li><li>Application troubleshooting</li></ul></div>
-          <div class="panel skill-group"><h3>Scripting & automation</h3><ul class="tags"><li>PowerShell</li><li>Automation</li><li>Monitoring</li><li>Service restoration</li></ul></div>
-          <div class="panel skill-group"><h3>Infrastructure</h3><ul class="tags"><li>Windows Server</li><li>High-availability systems</li><li>Enterprise environments</li><li>Incident handling</li></ul></div>
-          <div class="panel skill-group"><h3>Operational strengths</h3><ul class="tags"><li>Root cause analysis</li><li>Problem solving</li><li>Service continuity</li><li>Documentation</li></ul></div>
+          <div class="panel skill"><h3>Databases & applications</h3><ul class="tags"><li>SQL Server</li><li>Oracle</li><li>IIS</li><li>Point-in-time recovery</li><li>API troubleshooting</li></ul></div>
+          <div class="panel skill"><h3>Scripting & monitoring</h3><ul class="tags"><li>PowerShell</li><li>Automation</li><li>Database monitoring</li><li>Connection pool troubleshooting</li></ul></div>
+          <div class="panel skill"><h3>Service operations</h3><ul class="tags"><li>Incident management</li><li>Emergency failover</li><li>High availability</li><li>Root cause analysis</li></ul></div>
+          <div class="panel skill"><h3>Integrations & support</h3><ul class="tags"><li>SSL certificates</li><li>Payment gateways</li><li>Application support</li><li>Technical mentoring</li></ul></div>
         </div>
       </section>
-
       <section class="section" id="certifications" aria-labelledby="certifications-title">
-        <div class="section-heading"><span>04</span><h2 id="certifications-title">Certifications</h2></div>
-        <div class="panel entry">
+        <h2 class="section-title" id="certifications-title"><span>04</span> Certification</h2>
+        <article class="panel entry">
           <h3>AWS Certified Cloud Practitioner</h3>
           <p class="meta">Amazon Web Services (AWS) · CLF-C02 · September 2026</p>
-          <p>Certified in foundational AWS cloud concepts and services, supporting cloud-aware systems support and operational understanding in enterprise environments.</p>
-        </div>
+        </article>
       </section>
-
-      <section class="section" aria-labelledby="projects-title">
-        <div class="section-heading"><span>05</span><h2 id="projects-title">Selected strengths</h2></div>
-        <div class="project-grid">
-          <article class="panel project">
-            <h3><a href="#">Incident Response & Recovery</a></h3>
-            <p>Focused on restoring critical services quickly, reducing downtime, and minimizing business impact during outages and application issues.</p>
-            <ul class="tags"><li>MTTR reduction</li><li>High availability</li></ul>
-          </article>
-          <article class="panel project">
-            <h3><a href="#">Application & Database Support</a></h3>
-            <p>Experienced in supporting business-critical systems through troubleshooting, monitoring, and operational support for both database and web application layers.</p>
-            <ul class="tags"><li>SQL Server</li><li>Oracle</li><li>IIS</li></ul>
-          </article>
-        </div>
-      </section>
-
       <section class="section" id="contact" aria-labelledby="contact-title">
-        <div class="section-heading"><span>06</span><h2 id="contact-title">Let’s connect</h2></div>
-        <div class="panel contact-panel">
-          <div><h3>Open to systems support and administration opportunities</h3><p>Reach out to discuss support roles, infrastructure operations, or application support opportunities.</p></div>
-          <div class="hero-actions">
-            <a class="button" href="mailto:[your-email@example.com]">Email me</a>
-            <a class="button secondary" href="https://github.com/craigrey">GitHub</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/[your-profile]">LinkedIn</a>
-          </div>
+        <h2 class="section-title" id="contact-title"><span>05</span> Contact</h2>
+        <div class="panel contact">
+          <div><h3>Craig Ngcitshi Mlotshwa</h3><p>Systems Administrator · Application Support Specialist</p></div>
+          <a class="button" href="https://github.com/craigrey">GitHub profile</a>
         </div>
       </section>
     </main>
-    <footer><p>© <span id="year">2026</span> Craig Ngcitshi Mlotshwa · Built as a professional online CV.</p></footer>
+    <footer><p>© <span id="year">2026</span> Craig Ngcitshi Mlotshwa</p></footer>
   </div>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
