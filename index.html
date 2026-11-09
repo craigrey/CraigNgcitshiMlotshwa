@@ -3,118 +3,219 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Online CV and portfolio for Your Name.">
-  <meta name="theme-color" content="#102a43">
-  <title>Your Name | CV</title>
+  <meta name="description" content="Software engineering CV and project portfolio for Craig Mlotshwa.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Craig Mlotshwa | Software Engineer</title>
   <style>
     :root {
-      color-scheme: light;
-      --ink: #102a43;
-      --muted: #526579;
-      --accent: #087e8b;
-      --line: #d9e2ec;
-      --paper: #fff;
-      --canvas: #f3f7fa;
+      color-scheme: dark;
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-raised: #152238;
+      --text: #eef4ff;
+      --muted: #a4b2c8;
+      --line: #273750;
+      --accent: #6ee7d2;
+      --accent-strong: #32cbb4;
+      --max-width: 1080px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--canvas);
-      color: var(--ink);
-      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 75% -10%, #18344a 0, transparent 38rem), var(--bg);
+      color: var(--text);
+      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    a { color: var(--accent); text-underline-offset: .2em; }
-    a:hover { color: #07545c; }
-    .page { width: min(100% - 2rem, 940px); margin: 3rem auto; }
-    .resume { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgb(16 42 67 / 8%); }
-    header { padding: clamp(2rem, 7vw, 4.5rem); background: var(--ink); color: white; }
-    header p { max-width: 650px; color: #d9e8f2; }
-    h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.1; letter-spacing: -.04em; }
-    .role { margin: .8rem 0 0; color: #72d6cf; font-size: 1.2rem; font-weight: 650; }
-    .contact { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 1.5rem; font-size: .95rem; }
-    .contact a { color: white; }
-    main { padding: clamp(1.5rem, 6vw, 3.5rem); }
-    section + section { margin-top: 2.4rem; }
-    h2 { margin: 0 0 1rem; padding-bottom: .45rem; border-bottom: 2px solid var(--line); font-size: 1.15rem; letter-spacing: .08em; text-transform: uppercase; }
+    a { color: var(--accent); text-underline-offset: .22em; }
+    a:hover { color: white; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max-width), calc(100% - 2.5rem)); margin-inline: auto; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-bottom: 1px solid rgb(164 178 200 / 15%); }
+    .brand { color: var(--text); font-weight: 750; letter-spacing: -.03em; text-decoration: none; }
+    .top-actions { display: flex; align-items: center; gap: 1.15rem; }
+    .top-actions a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+    .top-actions a:hover { color: var(--accent); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent); color: #06201d !important; font-weight: 750; text-decoration: none !important; cursor: pointer; }
+    .button:hover { background: #a3f4e7; border-color: #a3f4e7; }
+    .button.secondary { background: transparent; color: var(--text) !important; border-color: var(--line); }
+    .button.secondary:hover { border-color: var(--accent); color: var(--accent) !important; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 3rem; align-items: center; padding-block: clamp(4rem, 11vw, 8rem); }
+    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: .55rem 0 1rem; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1.02; letter-spacing: -.065em; }
+    .hero h2 { margin: 0; color: #c1ccdc; font-size: clamp(1.25rem, 3vw, 1.8rem); font-weight: 550; letter-spacing: -.025em; }
+    .intro { max-width: 650px; margin: 1.4rem 0 0; color: var(--muted); font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+    .monogram { display: grid; place-items: center; width: 220px; aspect-ratio: 1; justify-self: center; border: 1px solid #33516a; border-radius: 50%; background: linear-gradient(145deg, #173b4c, #111c2e 68%); box-shadow: 0 0 0 14px rgb(110 231 210 / 4%), 0 24px 80px rgb(0 0 0 / 25%); color: var(--accent); font-size: 4rem; font-weight: 800; letter-spacing: -.08em; }
+    .section { padding-block: 2rem 3.5rem; scroll-margin-top: 1.5rem; }
+    .section-heading { display: flex; align-items: baseline; gap: .85rem; margin-bottom: 1.35rem; }
+    .section-heading span { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; }
+    h2 { margin: 0; font-size: 1.55rem; letter-spacing: -.035em; }
+    .panel { padding: clamp(1.2rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 14px; background: rgb(17 28 46 / 82%); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.25rem; }
+    .about-grid p { margin: 0; color: var(--muted); }
+    .focus-list { display: grid; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+    .focus-list li { display: flex; gap: .7rem; color: #d7e1ef; }
+    .focus-list li::before { content: "✳"; color: var(--accent); }
+    .entry { position: relative; padding: 0 0 0 1.25rem; border-left: 1px solid #38506b; }
+    .entry + .entry { margin-top: 1.7rem; }
+    .entry::before { position: absolute; top: .42rem; left: -.32rem; width: .58rem; height: .58rem; border-radius: 50%; background: var(--accent); content: ""; }
     h3 { margin: 0; font-size: 1.08rem; }
-    .entry + .entry { margin-top: 1.5rem; }
-    .meta { margin: .15rem 0 .45rem; color: var(--muted); font-size: .95rem; }
-    p { margin: .5rem 0; }
-    ul { margin: .5rem 0 0; padding-left: 1.25rem; }
-    li + li { margin-top: .25rem; }
-    .skills { display: flex; flex-wrap: wrap; gap: .55rem; padding: 0; list-style: none; }
-    .skills li { margin: 0; padding: .3rem .7rem; border: 1px solid var(--line); border-radius: 999px; background: #f7fafc; font-size: .92rem; }
-    footer { padding: 1rem 2rem; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .9rem; }
+    .meta { margin: .2rem 0 .65rem; color: var(--muted); font-size: .92rem; }
+    .entry p:not(.meta) { margin: .4rem 0; color: #d0dbea; }
+    ul.bullets { margin: .55rem 0 0; padding-left: 1.2rem; color: #d0dbea; }
+    ul.bullets li + li { margin-top: .35rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .skill-group h3 { margin-bottom: .75rem; color: var(--accent); font-size: .95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+    .tags li { padding: .32rem .7rem; border: 1px solid #31445e; border-radius: 999px; background: var(--surface-raised); color: #dce6f4; font-size: .9rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .project { display: flex; flex-direction: column; min-height: 200px; }
+    .project h3 a { color: var(--text); text-decoration: none; }
+    .project h3 a:hover { color: var(--accent); }
+    .project p { flex: 1; color: var(--muted); }
+    .project .tags { margin-top: .8rem; }
+    .contact-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .contact-panel p { margin: .35rem 0 0; color: var(--muted); }
+    footer { padding-block: 1.5rem 2rem; border-top: 1px solid rgb(164 178 200 / 15%); color: var(--muted); font-size: .9rem; }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 1.5rem, var(--max-width)); }
+      .topbar { align-items: flex-start; }
+      .top-actions { justify-content: flex-end; flex-wrap: wrap; gap: .55rem .85rem; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 4rem 3rem; }
+      .monogram { grid-row: 1; width: 130px; font-size: 2.5rem; justify-self: start; }
+      .hero-copy { grid-row: 2; }
+      .about-grid, .skills-grid, .project-grid { grid-template-columns: 1fr; }
+    }
     @media print {
-      body { background: white; font-size: 11pt; }
-      .page { width: 100%; margin: 0; }
-      .resume { border: 0; border-radius: 0; box-shadow: none; }
-      header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-raised: #f3f6f8; --text: #102a43; --muted: #46596d; --line: #ccd6e0; --accent: #087e8b; }
+      body { background: #fff; color: #102a43; font-size: 10.5pt; }
+      .wrap { width: 100%; }
+      .topbar, .hero-actions, footer { display: none; }
+      .hero { grid-template-columns: 1fr; padding-block: 1rem 1.5rem; }
+      .monogram { display: none; }
+      .panel { background: #fff; }
+      .section { padding-block: .8rem 1.2rem; }
       a { color: inherit; text-decoration: none; }
+      .section, .panel, .entry, .project { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <article class="resume">
-      <header>
-        <h1>Your Name</h1>
-        <p class="role">Your Professional Title</p>
-        <p>Write a brief introduction: what you do, the strengths you bring, and the kind of opportunity you are looking for.</p>
-        <nav class="contact" aria-label="Contact and professional profiles">
-          <a href="mailto:you@example.com">you@example.com</a>
-          <span>Your City, Country</span>
-          <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-          <a href="https://github.com/craigrey">GitHub</a>
-        </nav>
-      </header>
-      <main>
-        <section aria-labelledby="experience-heading">
-          <h2 id="experience-heading">Experience</h2>
-          <div class="entry">
-            <h3>Job Title · Company</h3>
-            <p class="meta">City, Country · Month Year – Present</p>
-            <ul>
-              <li>Describe a meaningful contribution and its result, ideally with a measurable outcome.</li>
-              <li>Highlight relevant responsibilities, tools, and collaboration.</li>
+  <div class="wrap">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#home">Craig Mlotshwa</a>
+      <div class="top-actions">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a class="button secondary" href="#contact">Get in touch</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">Software engineering · CV & portfolio</div>
+        <h1>Craig Mlotshwa</h1>
+        <h2>Software Engineer</h2>
+        <p class="intro">I build thoughtful, reliable software and enjoy solving problems from idea to implementation. I’m interested in creating useful products, writing maintainable code, and learning from strong engineering teams.</p>
+        <div class="hero-actions">
+          <a class="button" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <button class="button secondary" type="button" onclick="window.print()">Print / save as PDF</button>
+        </div>
+      </div>
+      <div class="monogram" aria-hidden="true">CM</div>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="about-title">
+        <div class="section-heading"><span>01</span><h2 id="about-title">Profile</h2></div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>I’m a software engineer focused on building clear, dependable solutions to real-world problems. I value readable code, continuous improvement, collaboration, and understanding the people who use the software. I’m currently open to opportunities where I can contribute, grow, and help deliver quality products.</p>
+          </div>
+          <div class="panel">
+            <ul class="focus-list">
+              <li>Application and API development</li>
+              <li>Readable, maintainable software</li>
+              <li>Testing and quality-minded delivery</li>
+              <li>Collaborative problem solving</li>
             </ul>
           </div>
-          <div class="entry">
-            <h3>Previous Job Title · Company</h3>
-            <p class="meta">City, Country · Month Year – Month Year</p>
-            <ul>
-              <li>Add a concise accomplishment that shows the impact of your work.</li>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading"><span>02</span><h2 id="experience-title">Experience</h2></div>
+        <div class="panel">
+          <article class="entry">
+            <h3>[Your latest role] · [Company]</h3>
+            <p class="meta">[Location or Remote] · [Month Year] – [Present / Month Year]</p>
+            <ul class="bullets">
+              <li>[Describe a feature, service, or system you delivered and the user or business problem it solved.]</li>
+              <li>[Add a concrete result: performance improvement, users supported, time saved, reliability, or delivery impact.]</li>
+              <li>[Mention relevant technologies and how you worked with your team.]</li>
             </ul>
+          </article>
+          <article class="entry">
+            <h3>[Previous role] · [Company]</h3>
+            <p class="meta">[Location] · [Month Year] – [Month Year]</p>
+            <ul class="bullets">
+              <li>[Summarize your most relevant contribution and its outcome.]</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading"><span>03</span><h2 id="skills-title">Technical skills</h2></div>
+        <div class="skills-grid">
+          <div class="panel skill-group"><h3>Languages</h3><ul class="tags"><li>[Add languages you use]</li><li>[e.g. JavaScript]</li><li>[e.g. Python]</li></ul></div>
+          <div class="panel skill-group"><h3>Frameworks & tools</h3><ul class="tags"><li>[Add frameworks]</li><li>[Add developer tools]</li></ul></div>
+          <div class="panel skill-group"><h3>Data & infrastructure</h3><ul class="tags"><li>[Add databases]</li><li>[Add cloud / deployment tools]</li></ul></div>
+          <div class="panel skill-group"><h3>Engineering practices</h3><ul class="tags"><li>Version control</li><li>Testing</li><li>Code review</li><li>[Add others]</li></ul></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="education-title">
+        <div class="section-heading"><span>04</span><h2 id="education-title">Education</h2></div>
+        <div class="panel entry">
+          <h3>[Qualification or certification] · [Institution]</h3>
+          <p class="meta">[Location] · [Year or dates]</p>
+          <p>[Add a relevant focus, achievement, or coursework, if applicable.]</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><span>05</span><h2 id="projects-title">Selected projects</h2></div>
+        <div class="project-grid">
+          <article class="panel project">
+            <h3><a href="https://github.com/craigrey/CraigNgcitshiMlotshwa">[Project name]</a></h3>
+            <p>[What does it do? Describe your role, the technical challenge, and what you built or learned.]</p>
+            <ul class="tags"><li>[Technology]</li><li>[Technology]</li></ul>
+          </article>
+          <article class="panel project">
+            <h3><a href="https://github.com/craigrey">[Another project]</a></h3>
+            <p>[Show another piece of work that demonstrates your engineering skills and the impact or outcome.]</p>
+            <ul class="tags"><li>[Technology]</li><li>[Technology]</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading"><span>06</span><h2 id="contact-title">Let’s connect</h2></div>
+        <div class="panel contact-panel">
+          <div><h3>Open to software engineering opportunities</h3><p>Reach out to discuss roles, projects, or collaboration.</p></div>
+          <div class="hero-actions">
+            <a class="button" href="mailto:[your-email@example.com]">Email me</a>
+            <a class="button secondary" href="https://github.com/craigrey">GitHub</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/[your-profile]">LinkedIn</a>
           </div>
-        </section>
-        <section aria-labelledby="education-heading">
-          <h2 id="education-heading">Education</h2>
-          <div class="entry">
-            <h3>Qualification · Institution</h3>
-            <p class="meta">City, Country · Year</p>
-            <p>Add a focus area, distinction, or relevant coursework if useful.</p>
-          </div>
-        </section>
-        <section aria-labelledby="skills-heading">
-          <h2 id="skills-heading">Skills</h2>
-          <ul class="skills">
-            <li>Skill or technology</li><li>Skill or technology</li><li>Skill or technology</li><li>Skill or technology</li>
-          </ul>
-        </section>
-        <section aria-labelledby="projects-heading">
-          <h2 id="projects-heading">Selected Projects</h2>
-          <div class="entry">
-            <h3><a href="https://github.com/your-username/your-project">Project Name</a></h3>
-            <p>Explain what the project does, your contribution, and the tools or results that matter.</p>
-          </div>
-        </section>
-        <section aria-labelledby="additional-heading">
-          <h2 id="additional-heading">Additional Information</h2>
-          <p>Add certifications, languages, volunteering, publications, or other relevant details—or remove this section.</p>
-        </section>
-      </main>
-      <footer>Last updated <time datetime="2026-11">November 2026</time></footer>
-    </article>
+        </div>
+      </section>
+    </main>
+    <footer><p>© <span id="year">2026</span> Craig Mlotshwa · Built as a lightweight online CV.</p></footer>
   </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
